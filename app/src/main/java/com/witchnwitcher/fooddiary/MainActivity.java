@@ -1,5 +1,6 @@
 package com.witchnwitcher.fooddiary;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -10,7 +11,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.witchnwitcher.fooddiary.data.LoginDataSource;
 import com.witchnwitcher.fooddiary.databinding.ActivityMainBinding;
+import com.witchnwitcher.fooddiary.ui.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        Intent login_intent = new Intent(this, LoginActivity.class);
+        startActivity(login_intent);
     }
 
 }
